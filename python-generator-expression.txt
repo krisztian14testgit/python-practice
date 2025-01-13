@@ -1,0 +1,75 @@
+# Python: generator expression
+	- link: https://docs.python.org/3/reference/expressions.html#generator-expressions
+	- generator expr: yield, => lazy evaluation
+	- generator methods:
+		* generator.__next__, 
+		* generator.send(), 
+		* generator.throw()
+		
+		
+	- for cycle with if cause
+		
+		sumNumber =	sum(array[i] for i in range(0, list_length) if i % 2 == 0)
+		
+		nested_array = [[item]*2 if item == 0 else [item] for item in donuts]
+		
+		split_pairs = [a[i:i + 2] for i in range(0, len(a), 2)]
+	
+	- nested array: [[], [], []] => flat list
+		
+		list = [n for sublist in nestedArray for n in sublist]
+		
+	- all(): return true if all item is true/iterable
+		
+		return all(ord(x) <= 90 for x in char_list)
+		
+	
+	
+# python: others
+
+	- slicing string, array
+		
+		1. myString[::] => [start-index : stopindex : steps]
+		1.1  arrayVariable[:] => deep copy whole array elements
+			
+		2. slice() function
+		
+			s1 = slice(3) 				// slice(stop)
+			s2 = slice(1, 5, 2)			// slice(start, stop)
+			s3 = slice(-1, -12, -2)		// slice(start, stop, range)
+		
+	- isIntiger()
+		char.isdigit() method
+		
+	- backward string/array
+		1. val[::-1] // slice operator
+		2. list.reverse() // where val: str
+		
+	- backward words
+		split_text_array = ['appletree', 'silk', 'your are boss']
+		return " ".join(word[::-1] for word in split_text_array)
+		
+	- characters reverse: hello => olleh
+		"Hello World"[::-1] # slicing string
+		
+	- sorting object by "price" field
+		biggest_price = lambda obj: obj["price"]
+		
+		data.sort(reverse=True, key=biggest_price)
+		top_values = data[0:limit] // limit 2 => top high-priced
+	
+	
+	- lamda expression // as anonymous function
+	
+		myUpper = lamda sParam: sParam.upper()
+		// calling
+		myupper('agaga')
+		
+		Max = lambda a, b : a if(a > b) else b
+		
+		// sorting
+		sortList = lambda x: (sorted(i) for i in x)
+		secondLargest = lambda x, f : [y[len(y)-2] for y in f(x)] // f(x) => callback function
+		res = secondLargest(List, sortList)
+	
+		
