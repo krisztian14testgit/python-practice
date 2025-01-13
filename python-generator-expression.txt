@@ -72,4 +72,5 @@
 		secondLargest = lambda x, f : [y[len(y)-2] for y in f(x)] // f(x) => callback function
 		res = secondLargest(List, sortList)
 	
+	/tttt/
 		
