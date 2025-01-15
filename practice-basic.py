@@ -113,13 +113,13 @@ numberList = [2,3,5,9,3,1]
 def sumUntilFirstPositiveNum(list):
     i = 0
     isEvenNum = False
-    summary = 0
+    summarized = 0
     while not isEvenNum and i < len(list):
         isEvenNum = list[i] % 2 == 0
         if (not isEvenNum):
-            summary += list[i]
+            summarized += list[i]
         i += 1
-    return summary
+    return summarized
 
 """
 Triangle number: osszeadjuk az adott iteráció számlálóját
@@ -132,14 +132,14 @@ Triangle number: osszeadjuk az adott iteráció számlálóját
 """
 def triangleNumbers(num):
     counter = 1
-    summary = 0
+    summarized = 0
     while True:
-        summary += counter
+        summarized += counter
         if counter >= num:
             break
         counter += 1
         
-    return summary
+    return summarized
 
 """
 Mennyi páros szám van a megadott számjegyben
@@ -170,7 +170,9 @@ selfStringReplacement("az {0}, ez más: {1}, sas: {0}", 12, 'alma') => az 12, ez
             array.append(item) // array.push(item)
             text.split: "alma fa sas" => ["alma", "fa", "sas"]
             while
-            string[n:m]: substring
+            slicing string
+                * str[start-index, end-index, steps]
+                * string[n:m]: substring
             "alma" + "fa" => "almafa"
 """
 def selfStringReplacement(text = '', *args):
@@ -361,6 +363,7 @@ def is_intiger(value: str) -> bool:
     numbers codes: 48 - 57
 
     @practise: ord(char): get ascii code of character
+    @supported fn: text.isdigit() => returns True if all the characters are digits
     """
     for char in value:
         ascii_code = ord(char)
